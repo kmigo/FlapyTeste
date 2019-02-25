@@ -12,9 +12,10 @@
 			background_color:0,0,0,0
 			background_normal:''
 			on_release:root.bird_up()
+
 	Bird:
 		id:bird
-		center:self.parent.center
+		#center:self.parent.center
 	
 	Barrel
 		id:barrel
@@ -126,6 +127,22 @@
 #		Rectangle:
 #			size:self.size
 #			pos:self.pos
+
+<PopupStart>:
+	title:'Flapy Bird'
+	size_hint:None,None
+	height:350
+	width:250
+
+	BoxLayout:
+		size_hint:None,None
+		size:root.size
+		canvas:
+			Color:
+				rgba:1,1,1,1
+			Rectangle:
+				size:root.size
+				pos:root.pos
 				
 	
 

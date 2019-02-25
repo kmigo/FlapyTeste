@@ -11,28 +11,34 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.floatlayout import FloatLayout
 from kivy.properties import NumericProperty,ObjectProperty
 from kivymd.toast import toast
+from kivy.uix.popup import Popup
 from kivymd.label import MDLabel
+from kivy.uix.button import Button
+from kivy.animation import Animation 
 import random
 
 
 class ScreenGame(FloatLayout):
 	birdObj=ObjectProperty(None)
-	condition=True
+	condition=None
 	#score=ObjectProperty(None)
 	def __init__(self,**kwargs):
 		super(ScreenGame,self).__init__(**kwargs)
-		self.height=1200
+		self.height=1400
 		self.width=800
 		self.move_barrel=15
+		self.birdObj.y= self.y+self.height 
+		self.start=None
+		self.birdObj.x = self.x +self.width *.45
 		self.Score=''
 		self.bird_decay=12
 		self.cont=0
-		self.cd= True
+		
 		
 		Clock.schedule_interval(self.condition_update,.05)
 	
 	def condition_update(self,*args):
-		if self.cd:
+		if self.condition:
 			self.update()
 		else:
 			pass
@@ -74,6 +80,10 @@ class ScreenGame(FloatLayout):
 			self.ids.bird.up += 1
 			self.move_barrel+=.1
 			self.bird_decay += .1
+			self.start=True
+		
+		if not self.start:
+			self.pop_start()
 			
  	def barrel_inf(self):
  		condition=self.ids.barrel.ids.bar_inf.bounce_bird(
@@ -84,10 +94,16 @@ class ScreenGame(FloatLayout):
  		condition=self.ids.barrel.ids.bar_sup.bounce_bird(
  		self.birdObj)
  		return condition
- 		
-	
+ 	
+ 	def pop_start(self,*args):
+ 		pop = PopupStart(self)
+ 		anim= Animation(size=(850,950),
+ 		duration=0.5,
+ 		t='in_out_back'
+ 		)
+ 		anim.start(pop)
+ 		pop.open()
 			
-		
 
 class Barrel(BoxLayout):
 	birdObj=ObjectProperty(None)
@@ -109,8 +125,6 @@ class Barrel(BoxLayout):
 			#self.ids.bar_med.height=valor_med
 			self.ids.bar_inf.size_hint_y=valor_inf
 		
-
-
 
 class BarrelSup(Widget):
 	def __init__(self,**kwargs):
@@ -166,6 +180,12 @@ class Bird(Widget):
 	
 	def ap(self):
 		self.y=400
+
+class PopupStart(Popup):
+	def __init__(self,obj,**kwargs):
+		super(PopupStart,self).__init__(**kwargs)
+		self.obj=obj
+
 
 
 		
