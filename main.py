@@ -15,6 +15,8 @@ from kivy.uix.popup import Popup
 from kivymd.label import MDLabel
 from kivy.uix.button import Button
 from kivy.animation import Animation 
+
+from kivymd.theming import ThemeManager
 import random
 
 
@@ -33,7 +35,8 @@ class ScreenGame(FloatLayout):
 		self.Score=''
 		self.bird_decay=12
 		self.cont=0
-		
+		self.over=None
+		self.starting=None
 		
 		Clock.schedule_interval(self.condition_update,.05)
 	
@@ -55,11 +58,48 @@ class ScreenGame(FloatLayout):
 		
 		if condition_sup == 'stop':
 			self.condition = False
+			self.over=True
+			
 		
 		if condition_inf == 'stop':
 			self.condition = False
+			self.over=True
+		
+		if self.over and self.starting == None:
+			self.game_over(
+			self.ids.barrel.ids.bar_med.get_score())
+			self.starting=False
+	
+	def restart(self,bt):
+		self.birdObj.y= 1200
+		self.ids.barrel.ids.bar_med.score=0
+		self.ids.texto.text='0'
+		self.ids.barrel.x= 1150
+		self.condition=True
+		self.starting=None
+		self.move_barrel=15
+		self.ids.barrel.ids.bar_sup.size_hint_y=.5
+		self.ids.barrel.ids.bar_inf.size_hint_y=.5
+		self.ids.barrel.ids.bar_med.passando=None
+		self.over=None
+		bt.dismiss()
+		
+	
+	def game_over(self,texto):
+		pop = PopEndGame(self)
+		anim= Animation(size=(850,950),
+ 		duration=0.5,
+ 		t='in_out_back'
+ 		)
+ 		anim.start(pop)
+		pop.open()
+	
+	def start_game(self,bt):
+		self.condition=True
+		bt.dismiss()
 			
 	def update(self):
+		
 		if self.condition:
 			self.ids.texto.text = str(self.ids.barrel.ids.bar_med.get_score())
 			self.ids.barrel.x-=self.move_barrel
@@ -103,8 +143,13 @@ class ScreenGame(FloatLayout):
  		)
  		anim.start(pop)
  		pop.open()
-			
 
+
+class PopEndGame(Popup):
+	def __init__(self,obj,**kwargs):
+		super(PopEndGame,self).__init__(**kwargs)
+		self.obj=obj
+		self.ids.texto.text='Sua pontuação foi de %s pontos'%self.obj.ids.texto.text 
 class Barrel(BoxLayout):
 	birdObj=ObjectProperty(None)
 	def __init__(self,**kwargs):
@@ -190,7 +235,7 @@ class PopupStart(Popup):
 
 		
 class GameApp(App):
-	pass
+	theme_cls=ThemeManager()
 	
 	def build(self):
 		game=ScreenGame()

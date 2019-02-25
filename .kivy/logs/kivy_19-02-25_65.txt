@@ -1,0 +1,83 @@
+[INFO   ] Logger: Record log in /storage/emulated/0/Dev/MeusProjetos/Flapy/github/FlapyTeste/.kivy/logs/kivy_19-02-25_65.txt
+[INFO   ] Kivy: v1.10.1.dev0, git-Unknown, 20171218
+[INFO   ] Python: v2.7.14 (default, Dec 18 2017, 09:30:59) 
+[GCC 7.2.0]
+[INFO   ] Factory: 194 symbols loaded
+[INFO   ] Image: Providers: img_tex, img_dds, img_sdl2, img_pil, img_gif (img_ffpyplayer ignored)
+[INFO   ] KivyMD: KivyMD version: 0.92.0
+[INFO   ] Text: Provider: sdl2
+[INFO   ] OSC: using <thread> for socket
+[INFO   ] Window: Provider: sdl2
+[INFO   ] GL: Using the "OpenGL ES 2" graphics system
+[INFO   ] GL: Backend used <gl>
+[INFO   ] GL: OpenGL version <OpenGL ES 3.2 V@269.0 (GIT@908a5ce, I77d3059488) (Date:06/07/18)>
+[INFO   ] GL: OpenGL vendor <Qualcomm>
+[INFO   ] GL: OpenGL renderer <Adreno (TM) 506>
+[INFO   ] GL: OpenGL parsed version: 3, 2
+[INFO   ] GL: Texture max size <16384>
+[INFO   ] GL: Texture max units <16>
+[INFO   ] Window: auto add sdl2 input provider
+[INFO   ] Window: virtual keyboard not allowed, single mode, not docked
+[INFO   ] GL: NPOT texture support is available
+[WARNING] Base: Unknown <android> provider
+[INFO   ] Base: Start application main loop
+[WARNING] Base: Failed to import "android" module. Could not remove android presplash.
+[INFO   ] Base: Leaving application in progress...
+[WARNING] stderr: Traceback (most recent call last):
+[WARNING] stderr:   File "/storage/emulated/0/Dev/MeusProjetos/Flapy/github/FlapyTeste/main.py", line 200, in <module>
+[WARNING] stderr:     GameApp().run()
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid2/files/arm-linux-androideabi/lib/python2.7/site-packages/kivy/app.py", line 829, in run
+[WARNING] stderr:     runTouchApp()
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid2/files/arm-linux-androideabi/lib/python2.7/site-packages/kivy/base.py", line 502, in runTouchApp
+[WARNING] stderr:     EventLoop.window.mainloop()
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid2/files/arm-linux-androideabi/lib/python2.7/site-packages/kivy/core/window/window_sdl2.py", line 720, in mainloop
+[WARNING] stderr:     self._mainloop()
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid2/files/arm-linux-androideabi/lib/python2.7/site-packages/kivy/core/window/window_sdl2.py", line 457, in _mainloop
+[WARNING] stderr:     EventLoop.idle()
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid2/files/arm-linux-androideabi/lib/python2.7/site-packages/kivy/base.py", line 340, in idle
+[WARNING] stderr:     self.dispatch_input()
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid2/files/arm-linux-androideabi/lib/python2.7/site-packages/kivy/base.py", line 325, in dispatch_input
+[WARNING] stderr:     post_dispatch_input(*pop(0))
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid2/files/arm-linux-androideabi/lib/python2.7/site-packages/kivy/base.py", line 291, in post_dispatch_input
+[WARNING] stderr:     wid.dispatch('on_touch_up', me)
+[WARNING] stderr:   File "kivy/_event.pyx", line 707, in kivy._event.EventDispatcher.dispatch (kivy/_event.c:7797)
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid2/files/arm-linux-androideabi/lib/python2.7/site-packages/kivy/uix/behaviors/button.py", line 179, in on_touch_up
+[WARNING] stderr:     self.dispatch('on_release')
+[WARNING] stderr:   File "kivy/_event.pyx", line 703, in kivy._event.EventDispatcher.dispatch (kivy/_event.c:7752)
+[WARNING] stderr:   File "kivy/_event.pyx", line 1214, in kivy._event.EventObservers.dispatch (kivy/_event.c:13511)
+[WARNING] stderr:   File "kivy/_event.pyx", line 1098, in kivy._event.EventObservers._dispatch (kivy/_event.c:12346)
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid2/files/arm-linux-androideabi/lib/python2.7/site-packages/kivy/lang/builder.py", line 64, in custom_callback
+[WARNING] stderr:     exec(__kvlang__.co_value, idmap)
+[WARNING] stderr:   File "/storage/emulated/0/Dev/MeusProjetos/Flapy/github/FlapyTeste/game.kv", line 14, in <module>
+[WARNING] stderr:     on_release:root.bird_up()
+[WARNING] stderr:   File "/storage/emulated/0/Dev/MeusProjetos/Flapy/github/FlapyTeste/main.py", line 86, in bird_up
+[WARNING] stderr:     self.pop_start()
+[WARNING] stderr:   File "/storage/emulated/0/Dev/MeusProjetos/Flapy/github/FlapyTeste/main.py", line 99, in pop_start
+[WARNING] stderr:     pop = PopupStart(self)
+[WARNING] stderr:   File "/storage/emulated/0/Dev/MeusProjetos/Flapy/github/FlapyTeste/main.py", line 186, in __init__
+[WARNING] stderr:     super(PopupStart,self).__init__(**kwargs)
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid2/files/arm-linux-androideabi/lib/python2.7/site-packages/kivy/uix/modalview.py", line 152, in __init__
+[WARNING] stderr:     super(ModalView, self).__init__(**kwargs)
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid2/files/arm-linux-androideabi/lib/python2.7/site-packages/kivy/uix/anchorlayout.py", line 68, in __init__
+[WARNING] stderr:     super(AnchorLayout, self).__init__(**kwargs)
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid2/files/arm-linux-androideabi/lib/python2.7/site-packages/kivy/uix/layout.py", line 76, in __init__
+[WARNING] stderr:     super(Layout, self).__init__(**kwargs)
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid2/files/arm-linux-androideabi/lib/python2.7/site-packages/kivy/uix/widget.py", line 345, in __init__
+[WARNING] stderr:     Builder.apply(self, ignored_consts=self._kwargs_applied_init)
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid2/files/arm-linux-androideabi/lib/python2.7/site-packages/kivy/lang/builder.py", line 451, in apply
+[WARNING] stderr:     self._apply_rule(widget, rule, rule, ignored_consts=ignored_consts)
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid2/files/arm-linux-androideabi/lib/python2.7/site-packages/kivy/lang/builder.py", line 567, in _apply_rule
+[WARNING] stderr:     self._apply_rule(child, crule, rootrule)
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid2/files/arm-linux-androideabi/lib/python2.7/site-packages/kivy/lang/builder.py", line 506, in _apply_rule
+[WARNING] stderr:     rule.canvas_root, rootrule)
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid2/files/arm-linux-androideabi/lib/python2.7/site-packages/kivy/lang/builder.py", line 817, in _build_canvas
+[WARNING] stderr:     'You can add only graphics Instruction in canvas.')
+[WARNING] stderr: kivy.lang.builder.BuilderException: Parser: File "/storage/emulated/0/Dev/MeusProjetos/Flapy/github/FlapyTeste/game.kv", line 148:
+[WARNING] stderr: ...
+[WARNING] stderr:     146:				pos:root.pos
+[WARNING] stderr:     147:		
+[WARNING] stderr: >>  148:			BoxLayout:
+[WARNING] stderr:     149:				Image:
+[WARNING] stderr:     150:					source:'fundoini.png'
+[WARNING] stderr: ...
+[WARNING] stderr: You can add only graphics Instruction in canvas.

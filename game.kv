@@ -1,5 +1,6 @@
 # -*- coding:utf-8 -*-
-
+#: import MDRaisedButton kivymd.button.MDRaisedButton
+#: import MDLabel kivymd.label.MDLabel
 <ScreenGame>:
 	
 	birdObj:bird
@@ -135,14 +136,69 @@
 	width:250
 
 	BoxLayout:
+		orientation:'vertical'
 		size_hint:None,None
 		size:root.size
 		canvas:
 			Color:
-				rgba:1,1,1,1
-			Rectangle:
+				rgba:.6,.8,.6,1
+			RoundedRectangle:
 				size:root.size
 				pos:root.pos
+				radius:[70,]
+		
+		BoxLayout:
+		BoxLayout:
+		BoxLayout:
+			Screen:
+				MDRaisedButton:
+					text:'Iniciar Jogo'
+					on_release:root.obj.start_game(root)
+			Screen:
+				MDRaisedButton:
+					text:'sair do Jogo'
+
+<PopEndGame>:
+	title:'Flapy Bird'
+	size_hint:None,None
+	height:350
+	width:250
+	auto_dismiss:False
+	BoxLayout:
+		orientation:'vertical'
+		size_hint:None,None
+		size:root.size
+		
+		canvas:
+			Color:
+				rgba:.6,.8,.6,1
+			RoundedRectangle:
+				size:root.size
+				pos:root.pos
+				radius:[70,]
+		
+		BoxLayout:
+		BoxLayout:
+			MDLabel:
+				text:''
+				halign:'center'
+				valign:'middle'
+				font_style:'Body2'
+				texture_size:root.width * .9,root.height
+				id:texto
+				size:self.texture_size
+		BoxLayout:
+			Screen:
+				MDRaisedButton:
+					text:'Reiniciar Jogo'
+					
+					on_release:root.obj.restart(root)
+			Screen:
+				MDRaisedButton:
+					text:'sair do Jogo'
+			
+					
+				
 				
 	
 
