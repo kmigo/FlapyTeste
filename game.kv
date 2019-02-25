@@ -1,0 +1,133 @@
+# -*- coding:utf-8 -*-
+
+<ScreenGame>:
+	
+	birdObj:bird
+	Image:
+		source:'fundo.jpg'
+		allow_stretch:True
+		keep_ratio:False
+	BoxLayout:
+		Button:
+			background_color:0,0,0,0
+			background_normal:''
+			on_release:root.bird_up()
+	Bird:
+		id:bird
+		center:self.parent.center
+	
+	Barrel
+		id:barrel
+		birdObj:self.parent.birdObj
+	BoxLayout:
+		x:root.x + root.width * 3/4 - self.width * 0.35
+		y:root.y + root.height * 3/4 + self.height *2.6
+		size_hint:None,None
+		size:400,120
+		canvas:
+			Color:
+				rgba:.5,.2,.6,1
+			RoundedRectangle:
+				size:self.size
+				pos:self.pos
+				radius:[48,]
+		BoxLayout:
+			MDLabel:
+				text:'score :'
+				halign:'center'
+				font_style:'Title'
+		BoxLayout:
+			
+			MDLabel:
+				halign:'center'
+				id:texto
+				font_style:'Title'
+				
+		
+
+<Barrel>:
+	orientation:'vertical'
+	size_hint:None,None
+	size:200,self.parent.height
+	BarrelSup:
+		id:bar_sup
+	BarrelMed:
+		id:bar_med
+		bird:self.parent.birdObj
+	BarrelInf:
+		id:bar_inf
+
+<BarrelSup>:
+	size_hint_y:.6
+	BoxLayout:
+		size_hint:None,None
+		size:root.size
+		x:root.x
+		y:root.y
+		Image:
+			source:'canoSup.png'
+			allow_stretch:True
+			keep_ratio:False
+	
+	#canvas:
+#		Color:
+#			rgba:1,1,1,1
+#		Rectangle:
+#			size:self.size
+#			pos:self.pos
+
+<BarrelMed>:
+	size_hint_y:None
+	height:553
+	bird:self.parent.birdObj
+	canvas:
+		Color:
+			rgba:1,1,1,0
+		Rectangle:
+			size:self.size
+			pos:self.pos
+
+<BarrelInf>:
+	BoxLayout:
+		size_hint:None,None
+		size:root.size
+		x:root.x
+		y:root.y
+		Image:
+			source:'canoInf.png'
+			allow_stretch:True
+			keep_ratio:False
+	#canvas:
+#		Color:
+#			rgba:1,1,1,1
+#		Rectangle:
+#			size:self.size
+#			pos:self.pos
+
+<Bird>:
+	size_hint:None,None
+	size:200,200
+	#x:self.parent.width/3
+	#y:self.parent.height/2
+	BoxLayout:
+		x:root.x
+		y:root.y
+		size_hint:None,None
+		size:root.size
+		
+		Image:
+			source:'bird.gif'
+			anim_delay:0.25
+			allow_stretch:True
+			keep_ratio:False
+	#canvas:
+#		Color:
+#			rgba:1,1,1,1
+#		Rectangle:
+#			size:self.size
+#			pos:self.pos
+				
+	
+
+
+
