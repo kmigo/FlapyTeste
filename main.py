@@ -28,17 +28,22 @@ class ScreenGame(FloatLayout):
 		super(ScreenGame,self).__init__(**kwargs)
 		self.height=1400
 		self.width=800
-		self.move_barrel=15
+		self.move_barrel=7
 		self.birdObj.y= self.y+self.height 
 		self.start=None
 		self.birdObj.x = self.x +self.width *.45
 		self.Score=''
-		self.bird_decay=12
+		self.bird_decay=-5
+		self.birg_offdecay=3
 		self.cont=0
 		self.over=None
 		self.starting=None
+		self.ms=0.0
+		self.bool_ms=None
+		self.positivo = +8
+		self.negativo = -5
 		
-		Clock.schedule_interval(self.condition_update,.05)
+		Clock.schedule_interval(self.condition_update,.01)
 	
 	def condition_update(self,*args):
 		if self.condition:
@@ -56,12 +61,12 @@ class ScreenGame(FloatLayout):
 		condition_inf=self.ids.barrel.ids.bar_inf.bounce_bird(
 		self.birdObj)
 		
-		if condition_sup == 'stop':
+		if condition_sup == 'stop' or self.ids.bird.y < 0:
 			self.condition = False
 			self.over=True
 			
 		
-		if condition_inf == 'stop':
+		if condition_inf == 'stop' or self.ids.bird.y > self.parent.height:
 			self.condition = False
 			self.over=True
 		
@@ -77,11 +82,15 @@ class ScreenGame(FloatLayout):
 		self.ids.barrel.x= 1150
 		self.condition=True
 		self.starting=None
-		self.move_barrel=15
+		self.move_barrel=5
 		self.ids.barrel.ids.bar_sup.size_hint_y=.5
 		self.ids.barrel.ids.bar_inf.size_hint_y=.5
 		self.ids.barrel.ids.bar_med.passando=None
 		self.over=None
+		self.bird_decay=-5
+		self.positivo =+8
+		self.negativo = -5
+		
 		bt.dismiss()
 		
 	
@@ -103,7 +112,7 @@ class ScreenGame(FloatLayout):
 		if self.condition:
 			self.ids.texto.text = str(self.ids.barrel.ids.bar_med.get_score())
 			self.ids.barrel.x-=self.move_barrel
-			self.ids.bird.y-=self.bird_decay
+			self.ids.bird.y+=self.bird_decay
 			self.ids.barrel.ids.bar_med.bounce_bird(self.birdObj)
 			self.cont -=14
 			if self.cont <= -100 and self.ids.bird.up > 0 or self.bird_decay >= 13.5 and self.cont <= -90 and self.ids.bird.up > 0: 
@@ -112,14 +121,27 @@ class ScreenGame(FloatLayout):
 			
 			if self.bird_decay >= 13.5:
 				self.bird_decay = 13.5
+				self.positivo = self.bird_decay
+				self.negativo =self.bird_decay *(-1)
+			
+			if self.bool_ms:
+				self.ms+=.1
+				self.bird_decay= +8
+				if self.ms >= 1.5:
+					self.ms = 0.0
+					self.bird_decay= -5
+					self.bool_ms =False
 	
 	
 	def bird_up(self):
 		if self.ids.bird.up <= 4 and self.condition:
-			self.ids.bird.y+=100
+			#self.ids.bird.y+=100
 			self.ids.bird.up += 1
 			self.move_barrel+=.1
-			self.bird_decay += .1
+			self.positivo+=.1
+			self.negativo+=.1
+			#self.bird_decay+=.1
+			self.bool_ms=True
 			self.start=True
 		
 		if not self.start:

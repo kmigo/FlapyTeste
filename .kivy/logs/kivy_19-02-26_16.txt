@@ -1,6 +1,4 @@
-[INFO   ] Logger: Record log in /storage/emulated/0/Dev/MeusProjetos/Flapy/github/FlapyTeste/.kivy/logs/kivy_19-02-25_0.txt
-[WARNING] [Config      ] Upgrading configuration in progress.
-[WARNING] [Config      ] Older configuration version detected (0 instead of 20)
+[INFO   ] Logger: Record log in /storage/emulated/0/Dev/MeusProjetos/Flapy/github/FlapyTeste/.kivy/logs/kivy_19-02-26_16.txt
 [INFO   ] Kivy: v1.10.1.dev0, git-Unknown, 20171218
 [INFO   ] Python: v2.7.14 (default, Dec 18 2017, 09:30:59) 
 [GCC 7.2.0]

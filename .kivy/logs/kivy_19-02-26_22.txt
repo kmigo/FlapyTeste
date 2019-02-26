@@ -1,4 +1,4 @@
-[INFO   ] Logger: Record log in /storage/emulated/0/Dev/MeusProjetos/Flapy/github/FlapyTeste/.kivy/logs/kivy_19-02-25_31.txt
+[INFO   ] Logger: Record log in /storage/emulated/0/Dev/MeusProjetos/Flapy/github/FlapyTeste/.kivy/logs/kivy_19-02-26_22.txt
 [INFO   ] Kivy: v1.10.1.dev0, git-Unknown, 20171218
 [INFO   ] Python: v2.7.14 (default, Dec 18 2017, 09:30:59) 
 [GCC 7.2.0]

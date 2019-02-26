@@ -1,4 +1,4 @@
-[INFO   ] Logger: Record log in /storage/emulated/0/Dev/MeusProjetos/Flapy/github/FlapyTeste/.kivy/logs/kivy_19-02-25_14.txt
+[INFO   ] Logger: Record log in /storage/emulated/0/Dev/MeusProjetos/Flapy/github/FlapyTeste/.kivy/logs/kivy_19-02-26_23.txt
 [INFO   ] Kivy: v1.10.1.dev0, git-Unknown, 20171218
 [INFO   ] Python: v2.7.14 (default, Dec 18 2017, 09:30:59) 
 [GCC 7.2.0]
@@ -19,13 +19,7 @@
 [INFO   ] Window: auto add sdl2 input provider
 [INFO   ] Window: virtual keyboard not allowed, single mode, not docked
 [INFO   ] GL: NPOT texture support is available
-[WARNING] stderr: Traceback (most recent call last):
-[WARNING] stderr:   File "/storage/emulated/0/Dev/MeusProjetos/Flapy/github/FlapyTeste/main.py", line 180, in <module>
-[WARNING] stderr:     GameApp().run()
-[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid2/files/arm-linux-androideabi/lib/python2.7/site-packages/kivy/app.py", line 803, in run
-[WARNING] stderr:     root = self.build()
-[WARNING] stderr:   File "/storage/emulated/0/Dev/MeusProjetos/Flapy/github/FlapyTeste/main.py", line 176, in build
-[WARNING] stderr:     game=ScreenGame()
-[WARNING] stderr:   File "/storage/emulated/0/Dev/MeusProjetos/Flapy/github/FlapyTeste/main.py", line 28, in __init__
-[WARNING] stderr:     self.birdObj.y= self.y+self.height * .9
-[WARNING] stderr: AttributeError: 'ScreenGame' object has no attribute 'birObj'
+[WARNING] Base: Unknown <android> provider
+[INFO   ] Base: Start application main loop
+[WARNING] Base: Failed to import "android" module. Could not remove android presplash.
+[INFO   ] Base: Leaving application in progress...
