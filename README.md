@@ -1,2 +1,0 @@
-# FlapyTeste
-Experimento Flapy

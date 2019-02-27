@@ -1,206 +1,54 @@
-# -*- coding:utf-8 -*-
-#: import MDRaisedButton kivymd.button.MDRaisedButton
-#: import MDLabel kivymd.label.MDLabel
+# -*- coding :utf-8 -*-
 <ScreenGame>:
-	
-	birdObj:bird
-	Image:
-		source:'fundo.jpg'
-		allow_stretch:True
-		keep_ratio:False
-	BoxLayout:
-		Button:
-			background_color:0,0,0,0
-			background_normal:''
-			on_release:root.bird_up()
-
 	Bird:
-		id:bird
-		#center:self.parent.center
-	
-	Barrel
+		center:self.parent.center
+	Barrel:
 		id:barrel
-		birdObj:self.parent.birdObj
-	BoxLayout:
-		x:root.x + root.width * 3/4 - self.width * 0.35
-		y:root.y + root.height * 3/4 + self.height *2.6
-		size_hint:None,None
-		size:400,120
-		canvas:
-			Color:
-				rgba:.5,.2,.6,1
-			RoundedRectangle:
-				size:self.size
-				pos:self.pos
-				radius:[48,]
-		BoxLayout:
-			MDLabel:
-				text:'score :'
-				halign:'center'
-				font_style:'Title'
-		BoxLayout:
-			
-			MDLabel:
-				halign:'center'
-				id:texto
-				font_style:'Title'
-				
-		
+		center_x:self.parent.center_x + self.parent.center_x * .75
 
 <Barrel>:
-	orientation:'vertical'
-	size_hint:None,None
-	size:200,self.parent.height
-	BarrelSup:
-		id:bar_sup
-	BarrelMed:
-		id:bar_med
-		bird:self.parent.birdObj
-	BarrelInf:
-		id:bar_inf
-
-<BarrelSup>:
-	size_hint_y:.6
-	BoxLayout:
-		size_hint:None,None
-		size:root.size
-		x:root.x
-		y:root.y
-		Image:
-			source:'canoSup.png'
-			allow_stretch:True
-			keep_ratio:False
+	size:220,self.parent.height
+	Barrel_Sup:
+		y:self.parent.y +self.parent.height *.7
+		x:self.parent.x 
+		
+	Barrel_Mid:
+		y:self.parent.y +self.parent.height *.4
+		x:self.parent.x
 	
-	#canvas:
-#		Color:
-#			rgba:1,1,1,1
-#		Rectangle:
-#			size:self.size
-#			pos:self.pos
+	Barrel_Inf:
+		y:self.parent.y
+		x:self.parent.x
 
-<BarrelMed>:
-	size_hint_y:None
-	height:553
-	bird:self.parent.birdObj
+<Barrel_Sup>:
+	size:self.parent.width,self.parent.height *.3
 	canvas:
-		Color:
-			rgba:1,1,1,0
 		Rectangle:
 			size:self.size
 			pos:self.pos
 
-<BarrelInf>:
-	BoxLayout:
-		size_hint:None,None
-		size:root.size
-		x:root.x
-		y:root.y
-		Image:
-			source:'canoInf.png'
-			allow_stretch:True
-			keep_ratio:False
-	#canvas:
-#		Color:
-#			rgba:1,1,1,1
-#		Rectangle:
-#			size:self.size
-#			pos:self.pos
+<Barrel_Mid>:
+	size:self.parent.width,self.parent.height *.3
+	canvas:
+		Color:
+			rgba:1,0,0,1
+		Rectangle:
+			size:self.size
+			pos:self.pos
+
+<Barrel_Inf>:
+	size:self.parent.width,self.parent.height *.4
+	canvas:
+		Color:
+			rgba:1,1,1,1
+		Rectangle:
+			size:self.size
+			pos:self.pos
 
 <Bird>:
-	size_hint:None,None
-	size:200,200
-	#x:self.parent.width/3
-	#y:self.parent.height/2
-	BoxLayout:
-		x:root.x
-		y:root.y
-		size_hint:None,None
-		size:root.size
-		
-		Image:
-			source:'bird.gif'
-			anim_delay:0.25
-			allow_stretch:True
-			keep_ratio:False
-	#canvas:
-#		Color:
-#			rgba:1,1,1,1
-#		Rectangle:
-#			size:self.size
-#			pos:self.pos
-
-<PopupStart>:
-	title:'Flapy Bird'
-	size_hint:None,None
-	height:350
-	width:250
-
-	BoxLayout:
-		orientation:'vertical'
-		size_hint:None,None
-		size:root.size
-		canvas:
-			Color:
-				rgba:.6,.8,.6,1
-			RoundedRectangle:
-				size:root.size
-				pos:root.pos
-				radius:[70,]
-		
-		BoxLayout:
-		BoxLayout:
-		BoxLayout:
-			Screen:
-				MDRaisedButton:
-					text:'Iniciar Jogo'
-					on_release:root.obj.start_game(root)
-			Screen:
-				MDRaisedButton:
-					text:'sair do Jogo'
-
-<PopEndGame>:
-	title:'Flapy Bird'
-	size_hint:None,None
-	height:350
-	width:250
-	auto_dismiss:False
-	BoxLayout:
-		orientation:'vertical'
-		size_hint:None,None
-		size:root.size
-		
-		canvas:
-			Color:
-				rgba:.6,.8,.6,1
-			RoundedRectangle:
-				size:root.size
-				pos:root.pos
-				radius:[70,]
-		
-		BoxLayout:
-		BoxLayout:
-			MDLabel:
-				text:''
-				halign:'center'
-				valign:'middle'
-				font_style:'Body2'
-				texture_size:root.width * .9,root.height
-				id:texto
-				size:self.texture_size
-		BoxLayout:
-			Screen:
-				MDRaisedButton:
-					text:'Reiniciar Jogo'
-					
-					on_release:root.obj.restart(root)
-			Screen:
-				MDRaisedButton:
-					text:'sair do Jogo'
-			
-					
-				
-				
-	
-
-
-
+	size:150,150
+	canvas:
+		RoundedRectangle:
+			size:self.size
+			pos:self.pos
+			radius:[360,]
