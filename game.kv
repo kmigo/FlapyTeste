@@ -2,49 +2,49 @@
 <ScreenGame>:
 	BackGround:
 		id:bg
-		
+		x:self.x
 	BackGround:
 		id:bg2
-		center_x:self.parent.center_x * 2
+		center_x:self.parent.center_x + self.parent.center_x
 	BackGround:
 		id:bg3
-		center_x:self.parent.center_x * 3
+		center_x:self.parent.center_x * 3 +self.parent.center_x
 	Button:
 		size_hint:None,None
 		size:root.size
 		on_release:root.Bird.bird_up()
 		background_normal:''
 		background_color:1,0,0,0
-	
+
 	Bird:
 		center:self.parent.center
 		id:bird
 	Barrel:
 		id:barrel
-		center_x:(self.parent.center_x *1.5)+self.parent.center_x 
-	
+		center_x:(self.parent.center_x *1.5)+self.parent.center_x
+
 	Barrel:
 		id:barrel_2
 		center_x:(self.parent.center_x *1.5)+self.parent.center_x * 1.8
-	
+
 	Barrel:
 		id:barrel_3
 		center_x:(self.parent.center_x *1.5)+self.parent.center_x * 2.5
-		
-	
+
+
 
 <Barrel>:
 	size:dp(70),self.parent.height
 	Barrel_Sup:
 		y:self.parent.y +self.parent.height * self.parent.pos_bar
-		x:self.parent.x 
+		x:self.parent.x
 		id:bar_sup
-				
+
 	Barrel_Mid:
 		y:self.parent.y +((self.parent.height * self.parent.pos_bar) - .45)
 		x:self.parent.x
 		id:bar_mid
-	
+
 	Barrel_Inf:
 		y:self.parent.y
 		x:self.parent.x
@@ -53,7 +53,7 @@
 
 <Barrel_Sup>:
 	size:self.parent.width,self.parent.height * self.parent.height_bar
-	
+
 	BoxLayout:
 		size_hint:None,None
 		size:root.size
@@ -72,9 +72,9 @@
 		Rectangle:
 			size:self.size
 			pos:self.pos
-	
-			
-			
+
+
+
 
 <Barrel_Inf>:
 	size:self.parent.width,self.parent.height * (self.parent.pos_bar - .45)
@@ -93,7 +93,7 @@
 			source:'canoInf_1.png'
 			allow_stretch:True
 			keep_ratio:False
-	
+
 <Bird>:
 	size:dp(58),dp(58)
 	BoxLayout:
@@ -106,7 +106,7 @@
 			anim_delay:.15
 			allow_stretch:True
 			keep_ratio:False
-	
+
 
 <BackGround>:
 	size_hint:None,None
@@ -114,4 +114,4 @@
 	Image:
 		source:'fundo.jpg'
 		allow_stretch:True
-		keep_ratio:False			
+		keep_ratio:False
