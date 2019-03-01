@@ -1,43 +1,74 @@
 # -*- coding :utf-8 -*-
 <ScreenGame>:
+	BackGround:
+		id:bg
+		
+	BackGround:
+		id:bg2
+		center_x:self.parent.center_x * 2
+	BackGround:
+		id:bg3
+		center_x:self.parent.center_x * 3
+	Button:
+		size_hint:None,None
+		size:root.size
+		on_release:root.Bird.bird_up()
+		background_normal:''
+		background_color:1,0,0,0
+	
 	Bird:
 		center:self.parent.center
+		id:bird
 	Barrel:
 		id:barrel
-		center_x:self.parent.center_x + self.parent.center_x * .75
+		center_x:(self.parent.center_x *1.5)+self.parent.center_x 
+	
+	Barrel:
+		id:barrel_2
+		center_x:(self.parent.center_x *1.5)+self.parent.center_x * 1.8
+	
+	Barrel:
+		id:barrel_3
+		center_x:(self.parent.center_x *1.5)+self.parent.center_x * 2.5
+		
+	
 
 <Barrel>:
 	size:dp(70),self.parent.height
 	Barrel_Sup:
-		y:self.parent.y +self.parent.height *.7
+		y:self.parent.y +self.parent.height * self.parent.pos_bar
 		x:self.parent.x 
-		
+		id:bar_sup
+				
 	Barrel_Mid:
-		y:self.parent.y +self.parent.height *.4
+		y:self.parent.y +((self.parent.height * self.parent.pos_bar) - .45)
 		x:self.parent.x
+		id:bar_mid
 	
 	Barrel_Inf:
 		y:self.parent.y
 		x:self.parent.x
+		id:bar_inf
+
 
 <Barrel_Sup>:
-	size:self.parent.width,self.parent.height *.3
+	size:self.parent.width,self.parent.height * self.parent.height_bar
 	canvas:
 		Rectangle:
 			size:self.size
 			pos:self.pos
 
 <Barrel_Mid>:
-	size:self.parent.width,self.parent.height *.3
+	size:self.parent.width,self.parent.height *.45
 	canvas:
 		Color:
-			rgba:1,0,0,1
+			rgba:1,0,0,0
 		Rectangle:
 			size:self.size
 			pos:self.pos
 
 <Barrel_Inf>:
-	size:self.parent.width,self.parent.height *.4
+	size:self.parent.width,self.parent.height * (self.parent.pos_bar - .45)
 	canvas:
 		Color:
 			rgba:1,1,1,1
@@ -46,9 +77,17 @@
 			pos:self.pos
 
 <Bird>:
-	size:dp(67),dp(67)
+	size:dp(58),dp(58)
 	canvas:
 		RoundedRectangle:
 			size:self.size
 			pos:self.pos
 			radius:[360,]
+
+<BackGround>:
+	size_hint:None,None
+	size:self.parent.size
+	Image:
+		source:'fundo.jpg'
+		allow_stretch:True
+		keep_ratio:False			
