@@ -16,54 +16,9 @@
 [INFO   ] GL: Texture max units <16>
 [INFO   ] Window: auto add sdl2 input provider
 [INFO   ] Window: virtual keyboard not allowed, single mode, not docked
+[INFO   ] GL: NPOT texture support is available
 [INFO   ] Text: Provider: sdl2
-[WARNING] stderr: Traceback (most recent call last):
-[WARNING] stderr:   File "/storage/emulated/0/Dev/MeusProjetos/Flapy/github/gut/FlapyTeste/main.py", line 134, in <module>
-[WARNING] stderr:     GameApp().run()
-[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid2/files/arm-linux-androideabi/lib/python2.7/site-packages/kivy/app.py", line 803, in run
-[WARNING] stderr:     root = self.build()
-[WARNING] stderr:   File "/storage/emulated/0/Dev/MeusProjetos/Flapy/github/gut/FlapyTeste/main.py", line 128, in build
-[WARNING] stderr:     game=ScreenGame()
-[WARNING] stderr:   File "/storage/emulated/0/Dev/MeusProjetos/Flapy/github/gut/FlapyTeste/main.py", line 23, in __init__
-[WARNING] stderr:     super(ScreenGame,self).__init__(**kwargs)
-[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid2/files/arm-linux-androideabi/lib/python2.7/site-packages/kivy/uix/widget.py", line 345, in __init__
-[WARNING] stderr:     Builder.apply(self, ignored_consts=self._kwargs_applied_init)
-[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid2/files/arm-linux-androideabi/lib/python2.7/site-packages/kivy/lang/builder.py", line 451, in apply
-[WARNING] stderr:     self._apply_rule(widget, rule, rule, ignored_consts=ignored_consts)
-[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid2/files/arm-linux-androideabi/lib/python2.7/site-packages/kivy/lang/builder.py", line 566, in _apply_rule
-[WARNING] stderr:     self.apply(child)
-[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid2/files/arm-linux-androideabi/lib/python2.7/site-packages/kivy/lang/builder.py", line 451, in apply
-[WARNING] stderr:     self._apply_rule(widget, rule, rule, ignored_consts=ignored_consts)
-[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid2/files/arm-linux-androideabi/lib/python2.7/site-packages/kivy/lang/builder.py", line 566, in _apply_rule
-[WARNING] stderr:     self.apply(child)
-[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid2/files/arm-linux-androideabi/lib/python2.7/site-packages/kivy/lang/builder.py", line 451, in apply
-[WARNING] stderr:     self._apply_rule(widget, rule, rule, ignored_consts=ignored_consts)
-[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid2/files/arm-linux-androideabi/lib/python2.7/site-packages/kivy/lang/builder.py", line 612, in _apply_rule
-[WARNING] stderr:     e), cause=tb)
-[WARNING] stderr: kivy.lang.builder.BuilderException: Parser: File "/storage/emulated/0/Dev/MeusProjetos/Flapy/github/gut/FlapyTeste/game.kv", line 40:
-[WARNING] stderr: ...
-[WARNING] stderr:      38:
-[WARNING] stderr:      39:<Barrel_Sup>:
-[WARNING] stderr: >>   40:	size:self.parent.width,self.parent.height * sel.parent.pos_bar
-[WARNING] stderr:      41:	canvas:
-[WARNING] stderr:      42:		Rectangle:
-[WARNING] stderr: ...
-[WARNING] stderr: BuilderException: Parser: File "/storage/emulated/0/Dev/MeusProjetos/Flapy/github/gut/FlapyTeste/game.kv", line 40:
-[WARNING] stderr: ...
-[WARNING] stderr:      38:
-[WARNING] stderr:      39:<Barrel_Sup>:
-[WARNING] stderr: >>   40:	size:self.parent.width,self.parent.height * sel.parent.pos_bar
-[WARNING] stderr:      41:	canvas:
-[WARNING] stderr:      42:		Rectangle:
-[WARNING] stderr: ...
-[WARNING] stderr: NameError: name 'sel' is not defined
-[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid2/files/arm-linux-androideabi/lib/python2.7/site-packages/kivy/lang/builder.py", line 249, in create_handler
-[WARNING] stderr:     return eval(value, idmap), bound_list
-[WARNING] stderr:   File "/storage/emulated/0/Dev/MeusProjetos/Flapy/github/gut/FlapyTeste/game.kv", line 40, in <module>
-[WARNING] stderr:     size:self.parent.width,self.parent.height * sel.parent.pos_bar
-[WARNING] stderr: 
-[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid2/files/arm-linux-androideabi/lib/python2.7/site-packages/kivy/lang/builder.py", line 597, in _apply_rule
-[WARNING] stderr:     rctx['ids'])
-[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid2/files/arm-linux-androideabi/lib/python2.7/site-packages/kivy/lang/builder.py", line 254, in create_handler
-[WARNING] stderr:     cause=tb)
-[WARNING] stderr: 
+[WARNING] Base: Unknown <android> provider
+[INFO   ] Base: Start application main loop
+[WARNING] Base: Failed to import "android" module. Could not remove android presplash.
+[INFO   ] Base: Leaving application in progress...

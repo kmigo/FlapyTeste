@@ -16,12 +16,14 @@ import random
 Config.read('config.ini')
 
 class ScreenGame(Widget):
-	
+
+# Classe pricipal do jogo abordando todos os Widgets dentro de si
+
 	Bird=ObjectProperty(None)
 	Barrel=ObjectProperty(None)
 	Barrel2=ObjectProperty(None)
 	Barrel3=ObjectProperty(None)
-	BirdObj=ObjectProperty(None)
+	
 	start=None
 	
 	def __init__(self,**kwargs):
@@ -39,6 +41,7 @@ class ScreenGame(Widget):
 		self.ids.bg.update()
 		self.ids.bg2.update()
 		self.ids.bg3.update()
+		
 	def condition(self):
 		self.Barrel.update()
 		self.Bird.move()
@@ -65,7 +68,7 @@ class ScreenGame(Widget):
 			
 class Bird(Widget):
 	
-	move_y= -8
+	move_y= -11
 	up=4
 	count_up=0
 	
@@ -74,13 +77,13 @@ class Bird(Widget):
 		if self.move_y > 0:
 			self.count_up += self.move_y
 		if self.count_up >= 140:
-			self.move_y = -8
+			self.move_y = -11
 			self.count_up =0
 			self.up-=1
 	def bird_up(self):
 		if self.up <= 4:
 			self.count_up=0
-			self.move_y = 8
+			self.move_y =11
 			
 	
 
@@ -102,7 +105,7 @@ class Barrel(Widget):
 		
 
 	def update(self):
-		self.x-=5
+		self.x-=8
 		self.random_pos_height()
 		self.show_random_pos()
 		
@@ -172,7 +175,7 @@ class GameApp(App):
 	
 	def build(self):
 		game=ScreenGame()
-		Clock.schedule_interval(game.update,.01)
+		Clock.schedule_interval(game.update,.03)
 		return game
 
 

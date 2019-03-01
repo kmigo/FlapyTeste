@@ -53,10 +53,16 @@
 
 <Barrel_Sup>:
 	size:self.parent.width,self.parent.height * self.parent.height_bar
-	canvas:
-		Rectangle:
-			size:self.size
-			pos:self.pos
+	
+	BoxLayout:
+		size_hint:None,None
+		size:root.size
+		x:root.x
+		y:root.y
+		Image:
+			source:'canoSup_1.png'
+			allow_stretch:True
+			keep_ratio:False
 
 <Barrel_Mid>:
 	size:self.parent.width,self.parent.height *.45
@@ -66,23 +72,41 @@
 		Rectangle:
 			size:self.size
 			pos:self.pos
+	
+			
+			
 
 <Barrel_Inf>:
 	size:self.parent.width,self.parent.height * (self.parent.pos_bar - .45)
 	canvas:
 		Color:
-			rgba:1,1,1,1
+			rgba:0,0,0,1
 		Rectangle:
 			size:self.size
 			pos:self.pos
-
+	BoxLayout:
+		size_hint:None,None
+		size:root.size
+		x:root.x
+		y:root.y
+		Image:
+			source:'canoInf_1.png'
+			allow_stretch:True
+			keep_ratio:False
+	
 <Bird>:
 	size:dp(58),dp(58)
-	canvas:
-		RoundedRectangle:
-			size:self.size
-			pos:self.pos
-			radius:[360,]
+	BoxLayout:
+		size_hint:None,None
+		size:root.size
+		x:root.x
+		y:root.y
+		Image:
+			source:'bird.gif'
+			anim_delay:.15
+			allow_stretch:True
+			keep_ratio:False
+	
 
 <BackGround>:
 	size_hint:None,None
